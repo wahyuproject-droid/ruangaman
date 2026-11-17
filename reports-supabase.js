@@ -1,0 +1,19 @@
+(()=>{'use strict';
+ const el=id=>document.getElementById(id);const states=['Diterima','Ditinjau','Ditindaklanjuti','Selesai'];
+ const config=window.RA_SUPABASE||{};const url=(config.url||'').replace(/\/$/,'');const key=config.publishableKey||'';
+ const ready=/^https:\/\/[a-z0-9.-]+\.supabase\.co$/.test(url)&&key.length>15;
+ const fmt=v=>new Date(v).toLocaleString('id-ID',{dateStyle:'medium',timeStyle:'short'});
+ const error=(node,msg)=>{node.textContent=msg;node.hidden=!msg};
+ const busy=(b,yes,label)=>{b.disabled=yes;b.textContent=yes?'Memproses…':label};
+ async function rpc(action,payload){
+  if(!ready)throw Error('Layanan laporan sedang tidak tersedia. Silakan hubungi petugas sekolah.');
+  const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),14000);
+  try{const res=await fetch(url+'/rest/v1/rpc/'+action,{method:'POST',headers:{'Content-Type':'application/json',apikey:key},body:JSON.stringify(payload),signal:ctrl.signal,cache:'no-store'});let data=await res.json().catch(()=>null);if(!res.ok)throw Error(data?.message||'Server laporan menolak permintaan.');return data;}catch(e){if(e.name==='AbortError')throw Error('Waktu koneksi habis. Periksa jaringan.');if(e instanceof TypeError)throw Error('Layanan laporan tidak dapat dihubungi. Periksa internet dan coba lagi.');throw e}finally{clearTimeout(timer)}
+ }
+ const form=el('case-form'), track=el('track-form');if(!form||!track)return;
+ const submit=el('case-submit');
+ form.addEventListener('submit',async e=>{e.preventDefault();error(el('case-error'),'');if(!form.reportValidity())return;const fd=new FormData(form),story=String(fd.get('story')||'').trim();if(story.length<20){error(el('case-error'),'Kronologi minimal 20 karakter.');return}busy(submit,true,'Kirim laporan');try{const result=await rpc('create_report',{p_role:fd.get('role'),p_type:fd.get('type'),p_place:String(fd.get('place')||'').trim(),p_story:story});if(!result?.id||!/^RM-[A-F0-9]{24}$/.test(result.id))throw Error('Server tidak mengembalikan ID yang benar.');el('case-issued-id').textContent=result.id;el('case-success').hidden=false;form.hidden=true;el('case-success').scrollIntoView({behavior:'smooth',block:'center'});}catch(ex){error(el('case-error'),ex.message||'Laporan gagal dikirim.')}finally{busy(submit,false,'Kirim laporan')}});
+ el('case-copy-id').addEventListener('click',async()=>{const id=el('case-issued-id').textContent;try{await navigator.clipboard.writeText(id);el('case-copy-id').textContent='ID berhasil disalin';}catch{el('case-copy-id').textContent='Salin ID secara manual'}});
+ track.addEventListener('submit',async e=>{e.preventDefault();error(el('track-error'),'');el('track-result').hidden=true;const id=el('track-id').value.trim().toUpperCase();if(!/^RM-[A-F0-9]{24}$/.test(id)){error(el('track-error'),'ID harus berupa RM- diikuti 24 karakter hexadecimal.');return}const b=track.querySelector('button[type=submit]');busy(b,true,'Cek status laporan');try{const result=await rpc('check_report_status',{p_id:id});if(!result||!result.id)throw Error('ID laporan tidak ditemukan.');el('track-result-id').textContent=result.id;el('track-status').textContent=result.status;el('track-update').textContent='Dibuat: '+fmt(result.createdAt)+' • Diperbarui: '+fmt(result.updatedAt);const container=el('track-steps');container.replaceChildren();const pos=states.indexOf(result.status);states.forEach((s,i)=>{const li=document.createElement('li');li.className='status-step'+(i<=pos?' done':'');const num=document.createElement('span');num.textContent=i<pos?'✓':String(i+1);li.append(num,document.createTextNode(s));container.append(li)});el('track-result').hidden=false;}catch(ex){error(el('track-error'),ex.message||'Laporan gagal diperiksa.')}finally{busy(b,false,'Cek status laporan')}});
+ const param=new URLSearchParams(location.search).get('id');if(param&&/^RM-[A-F0-9]{24}$/i.test(param))el('track-id').value=param.toUpperCase();
+})();

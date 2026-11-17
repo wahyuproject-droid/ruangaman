@@ -1,0 +1,94 @@
+
+:root{--ink:#33261d;--deep:#29261e;--deep2:#453427;--paper:#fbf5e9;--cream:#f1e4d0;--line:#dec9ac;--muted:#786a5a;--lime:#e6bd70;--blue:#cfc6a1;--peach:#d99b77;--radius:20px}
+body{background:#fbf5e9;color:var(--ink);font-family:Manrope,'DM Sans',sans-serif}
+body:before{content:"";position:fixed;z-index:-1;inset:0;background-image:url('kawung.svg');background-size:112px;opacity:.11;pointer-events:none}
+h1,h2,h3,.report-quote{font-family:'Cormorant Garamond',Georgia,serif!important;letter-spacing:-.025em!important}
+.hero h1{font-size:clamp(54px,6vw,88px)}
+.hero h1 span:not(.hero-period),.section-heading em,.closing h2 em,.group-banner em{color:#dfbd79}
+.announcement{background:#b78649;color:#fff8e7;border-bottom:1px solid #e6bd70}
+.announcement-dot{background:#fff2d9}
+.site-header{background:#fff8edee;border-bottom:1px solid #bb9b6b70;box-shadow:0 5px 22px #30201609}
+.brand-mark{background:#63452c;color:#f2d79a;border:1px solid #a37e4e}
+.brand-accent{color:#a36b37}
+.desktop-nav a{color:#5c4d3e}.desktop-nav a:hover,.desktop-nav a.current{color:#9a5929}
+.hero{background:radial-gradient(circle at 77% 39%,#59402c 0%,#31281f 42%,#24241e 100%);border-bottom:6px solid #b4874b}
+.hero:before{background-image:url('kawung.svg');background-size:135px;opacity:.10;mask-image:linear-gradient(90deg,#000 0%,transparent 70%)}
+.hero:after{background:radial-gradient(circle,#d8a75b24,transparent 67%)}
+.eyebrow-light{color:#e9c58d}.eyebrow-line{background:#c49a61}
+.hero-lead{color:#e3d6c7}.hero-period{color:#e9c58d}
+.hero-art{display:flex;align-items:center;justify-content:center;height:550px}
+.hero-art:before{content:"";position:absolute;width:min(490px,95%);height:min(490px,95%);border-radius:50%;border:1px solid #d1aa7050;box-shadow:0 0 0 25px #d1aa7009,0 0 0 61px #d1aa7005}
+.wayang-gunungan{width:min(100%,465px);height:100%;object-fit:contain;max-height:535px;position:relative;z-index:2;filter:drop-shadow(0 25px 25px #0e0d0b77);animation:gunungan-enter 1.2s both}
+@keyframes gunungan-enter{from{transform:translateY(28px) scale(.93);opacity:0}to{transform:translateY(0) scale(1);opacity:1}}
+.wayang-art-caption{position:absolute;z-index:3;bottom:20px;right:0;font-size:11px;letter-spacing:.22em;border:1px solid #e4bf7b66;padding:12px 16px;border-radius:35px;background:#2a251de6;color:#eed3a2}
+.hero-bottom{border-color:#bc985566;color:#d0b898}
+.hero-assurance{color:#d6c0a4}.hero-assurance .assurance-icon{border-color:#a8824b}.hero-assurance .icon{color:#ecc58a}
+.button-lime,.button-primary{background:linear-gradient(115deg,#b88a50,#f0cf8d);color:#2b231c;border:1px solid #c99d60}
+.button-lime:hover{background:#f5d99b;box-shadow:0 9px 29px #f0cf8d35}
+.button-dark{background:#433126;color:#fff4df}.button-dark:hover{background:#6c4829}
+.button-ghost{border-color:#d7bd92;color:#fff4df}
+.principles{background:#e9dcc6}
+.principles-grid>div,.principles-grid>div:last-child{border-color:#c9b493}
+.principles-grid .icon{color:#865b39}.principle-number{color:#977548}
+.section-kicker,.eyebrow{color:#a26f3f}.section-heading em{color:#a5713e}
+.hub-card,.member-card,.info-card,.law-card,.paper-card{border-color:#d7bd96!important;box-shadow:0 14px 38px #4b321210}
+.hub-card:hover,.member-card:hover{box-shadow:0 17px 43px #7a4c1732}
+.hub-number,.group-chip,.section-kicker{letter-spacing:.11em}
+.hub-card-featured{background:#49342b!important;color:#fff3df!important}
+.hub-card-featured .hub-number,.hub-card-featured p{color:#ecd4b3!important}
+.closing,.report-section,.group-banner{background:linear-gradient(125deg,#332920 3%,#59422c 80%)!important;color:#fff5e8}
+.closing:before,.report-section:before{background-image:url('kawung.svg');background-size:124px;opacity:.1}
+.report-content p{color:#e6d5bd}
+.group-count strong{color:#e7c889}
+.footer{background:#25251e;color:#f6e7d2}
+.footer a:hover{color:#eed19b}
+.bottom-dock{border:1px solid #cba77090;box-shadow:0 12px 35px #3927163d;background:#fff7e9f7;backdrop-filter:blur(16px)}
+.bottom-dock a.active{color:#87562c!important}
+.subpage-strip{background:#ebd9bb;color:#715034}
+.privacy-banner{border-color:#dcc392;background:#fcf2e0;color:#684d31}
+.modal-dialog{background:#fcf6ea}
+.modal-header{background:#fcf6ea}
+.modal-content .form-kicker{color:#936338}
+.report-panel{background:#fff9ef;color:#34291f;border:1px solid #d9bd91;border-radius:25px;padding:clamp(22px,3.5vw,45px);box-shadow:0 22px 55px #392a141a;position:relative;overflow:hidden}
+.report-panel:before{content:"";position:absolute;inset:0 0 auto 0;height:9px;background:repeating-linear-gradient(90deg,#ab7844 0 25px,#efce8a 25px 32px,#60452e 32px 47px)}
+.report-panel h3{font-size:clamp(29px,3.8vw,43px);line-height:1.1;margin:0 0 10px}
+.report-panel p{font-size:13px;line-height:1.75;color:#796653}
+.report-switch{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:26px}
+.report-switch button{background:#eadcc8;border:1px solid #c7aa81;border-radius:100px;padding:12px 21px;font-weight:800;color:#634326}
+.report-switch button.active{background:#583b29;color:white;border-color:#583b29}
+.case-layout{padding:86px 0 110px;background:linear-gradient(#f7efdf,#fbf5e9)}
+.case-layout .container{max-width:1000px}
+.case-hero{display:flex;align-items:center;gap:18px;margin-bottom:28px}
+.case-hero img{height:100px;width:75px;object-fit:contain}
+.case-hero h2{font-size:clamp(42px,6vw,67px);margin:0;line-height:1}
+.case-hero p{margin:7px 0 0;color:#76634d;font-size:14px}
+.case-grid{display:grid;grid-template-columns:1.07fr .93fr;gap:24px;align-items:start}
+.case-grid .report-panel{height:100%}
+.case-form{display:grid;gap:15px;margin-top:24px}
+.case-field{display:flex;flex-direction:column;gap:7px}
+.case-field label{font-size:12px;font-weight:800;color:#654a36}
+.case-field input,.case-field select,.case-field textarea{width:100%;border:1px solid #d5bea0;background:#fffdf8;padding:13px 14px;border-radius:11px;color:#3a2a20;font-size:14px;outline:none}
+.case-field input:focus,.case-field textarea:focus,.case-field select:focus{border-color:#996c3b;box-shadow:0 0 0 3px #caab7e48}
+.case-field textarea{min-height:133px;resize:vertical}
+.case-field .helper{font-size:11px;color:#82705d;line-height:1.6}
+.case-note{border-left:3px solid #ba8f53;background:#f4e7d2;padding:13px 14px;font-size:12px;line-height:1.7;color:#664a31;border-radius:0 10px 10px 0}
+.case-result{background:#f8edd7;border:1px solid #c9aa7b;border-radius:15px;padding:17px;margin-top:21px;line-height:1.65;font-size:13px}
+.case-id{display:block;word-break:break-word;letter-spacing:.025em;font-weight:800;font-size:clamp(17px,2vw,24px);color:#633c1f;margin:8px 0}
+.status-steps{display:grid;gap:11px;margin:19px 0 0;padding:0;list-style:none}
+.status-step{display:flex;align-items:center;gap:12px;color:#806c52;font-weight:700;font-size:12px}
+.status-step span{width:27px;height:27px;border:1px solid #d0b795;background:#f5e7d0;display:grid;place-items:center;border-radius:50%;flex:none}
+.status-step.done{color:#533723}.status-step.done span{background:#7f603b;color:#fff}
+.report-error{color:#922f29;font-size:12px;font-weight:700}
+.report-ok{color:#466b45;font-size:12px;font-weight:700}
+.hidden{display:none!important}
+.admin-wrap{max-width:1050px;margin:60px auto;padding:20px}
+.admin-toolbar{display:flex;gap:10px;align-items:end;flex-wrap:wrap;margin-bottom:20px}
+.admin-list{display:grid;gap:14px}
+.admin-card{border:1px solid #ceb38d;border-radius:16px;background:#fff9ed;padding:20px}
+.admin-card h3{font-size:27px;margin:0 0 7px}
+.admin-card label{display:block;margin-top:10px}
+.admin-card select,.admin-toolbar input{padding:11px;border:1px solid #c8ad8c;background:#fff;border-radius:9px;min-width:180px}
+.admin-card pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px;line-height:1.55}
+@media(max-width:950px){.case-grid{grid-template-columns:1fr}.case-hero img{height:75px;width:56px}}
+@media(max-width:650px){.hero-art{height:350px}.wayang-gunungan{max-height:350px}.wayang-art-caption{bottom:6px;right:10px;font-size:9px}.case-layout{padding:50px 0 120px}.case-grid{gap:15px}.case-hero h2{font-size:43px}.report-panel{padding:24px 17px}.report-panel h3{font-size:31px}.hero h1{font-size:53px}.hero-bottom{font-size:8px}.bottom-dock{max-width:calc(100% - 16px)}}
+@media(prefers-reduced-motion:reduce){.wayang-gunungan{animation:none}}

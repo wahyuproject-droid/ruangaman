@@ -1,0 +1,52 @@
+
+
+.ra-intro,.ra-curtain{position:fixed;inset:0;isolation:isolate;overflow:hidden;box-sizing:border-box;z-index:9900}
+.ra-intro *, .ra-curtain *{box-sizing:border-box}
+.ra-intro{background:#211b17;color:#fdf0d9;display:grid;place-items:center;visibility:visible;opacity:1;transition:opacity .45s ease,visibility .45s ease;pointer-events:auto;text-align:center}
+.ra-intro.is-hidden{visibility:hidden;opacity:0;pointer-events:none}
+.ra-intro__pattern{position:absolute;inset:0;background:url('kawung.svg') center/126px repeat;opacity:.12}
+.ra-intro__glow{position:absolute;inset:-25%;background:radial-gradient(ellipse at 50% 45%,#c3914b35,transparent 45%);pointer-events:none}
+.ra-intro__frame{position:relative;z-index:1;width:min(740px,92vw);max-height:calc(100dvh - 95px);padding:30px clamp(15px,4vw,40px);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:clamp(7px,1.25vh,16px);overflow:auto;scrollbar-width:none}
+.ra-intro__eyebrow{font:700 clamp(9px,1.5vw,12px)/1.4 Manrope,sans-serif;letter-spacing:.25em;color:#e5ba7b}
+.ra-intro__gunungan{height:clamp(115px,24dvh,255px);width:auto;max-width:70%;object-fit:contain;filter:drop-shadow(0 16px 24px #0b0807aa);animation:raIntroRise .8s cubic-bezier(.2,.8,.2,1) both}
+.ra-intro__welcome{color:#dcc096;letter-spacing:.2em;font-weight:700;font-size:clamp(10px,2vw,13px);margin:0!important}
+.ra-intro__title{font:700 clamp(48px,10vw,94px)/1.08 'Cormorant Garamond',Georgia,serif!important;letter-spacing:-.03em!important;color:#fff9ef;margin:0!important;white-space:nowrap;text-align:center}
+.ra-intro__title span{color:#dfb875}
+.ra-intro__line{height:2px;width:min(125px,24vw);background:linear-gradient(90deg,transparent,#e7c17b,transparent)}
+.ra-intro__message{font:500 clamp(12px,2.3vw,17px)/1.55 Manrope,sans-serif;color:#ebdbca;margin:0!important;max-width:440px;text-wrap:balance}
+.ra-intro__credit{font:800 10px/1.4 Manrope,sans-serif;letter-spacing:.19em;color:#c4a77f;margin:8px 0 0!important}
+.ra-intro__skip{position:absolute;z-index:2;top:clamp(16px,3vw,30px);right:clamp(15px,3vw,30px);background:#3e2a1c;border:1px solid #b98a4d;color:#ffebc7;padding:12px 17px;border-radius:999px;font:700 11px/1.2 Manrope,sans-serif;cursor:pointer}
+.ra-intro__skip:hover,.ra-intro__skip:focus-visible{background:#d3a367;color:#2f1d0f;outline-offset:3px}
+.ra-intro__progress{position:absolute;z-index:2;left:0;bottom:0;width:100%;height:3px;background:linear-gradient(90deg,#c38749,#f7de9f);transform-origin:left;transform:scaleX(0)}
+.ra-intro:not(.is-hidden) .ra-intro__progress{animation:raIntroProgress 3.6s linear both}
+@keyframes raIntroRise{from{opacity:0;transform:translateY(25px) scale(.94)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes raIntroProgress{to{transform:scaleX(1)}}
+.ra-curtain{visibility:hidden;pointer-events:none;z-index:9950}
+.ra-curtain.is-active{visibility:visible;pointer-events:auto}
+.ra-curtain__left,.ra-curtain__right{position:absolute;top:0;bottom:0;width:50.35%;background:
+repeating-linear-gradient(90deg,#25130955 0 12px,#aa72302f 18px 22px,#1d10085c 32px 44px),url('kawung.svg') center/144px repeat,linear-gradient(105deg,#362314,#5e3d24 50%,#2a180f);
+background-blend-mode:normal,soft-light,normal;will-change:transform;transition:transform .66s cubic-bezier(.65,.08,.19,1);box-shadow:inset 0 0 50px #0005}
+.ra-curtain__left{left:0;transform:translateX(-101%);border-right:3px solid #d5ac73}
+.ra-curtain__right{right:0;transform:translateX(101%);border-left:3px solid #d5ac73}
+.ra-curtain.is-closing .ra-curtain__left,.ra-curtain.is-holding .ra-curtain__left{transform:translateX(0)}
+.ra-curtain.is-closing .ra-curtain__right,.ra-curtain.is-holding .ra-curtain__right{transform:translateX(0)}
+.ra-curtain.is-opening .ra-curtain__left{transform:translateX(-101%)}
+.ra-curtain.is-opening .ra-curtain__right{transform:translateX(101%)}
+.ra-curtain__center{position:absolute;z-index:2;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;opacity:0;transition:opacity .2s ease;pointer-events:none;text-align:center;padding:30px;color:#fff0d1}
+.ra-curtain.is-holding .ra-curtain__center{opacity:1}
+.ra-curtain__center strong{font:700 clamp(32px,8vw,74px)/1.1 'Cormorant Garamond',Georgia,serif;max-width:95vw;text-wrap:balance;overflow-wrap:anywhere}
+.ra-curtain__eyebrow{font:700 10px/1.4 Manrope,sans-serif;letter-spacing:.24em;color:#f3cf8a}
+.ra-curtain__line{height:2px;width:110px;background:linear-gradient(90deg,transparent,#efc885,transparent)}
+body.ra-motion-locked{overflow:hidden}
+@media(max-width:600px){.ra-intro__frame{padding:12px 16px;gap:8px;max-height:calc(100dvh - 92px)}.ra-intro__gunungan{height:clamp(108px,22dvh,200px)}.ra-intro__title{font-size:clamp(49px,11.5vw,70px)}.ra-intro__eyebrow{font-size:8px;letter-spacing:.13em}.ra-intro__credit{letter-spacing:.09em;font-size:9px}.ra-intro__skip{padding:10px 13px;top:13px;right:13px}.ra-curtain__eyebrow{font-size:8px;letter-spacing:.13em}.ra-curtain__center strong{font-size:clamp(32px,9vw,51px)}}
+@media(max-height:520px){.ra-intro__frame{max-height:calc(100dvh - 65px);gap:3px;padding:6px}.ra-intro__gunungan{height:65px}.ra-intro__title{font-size:43px}.ra-intro__message{font-size:11px}.ra-intro__credit{display:none}.ra-intro__skip{top:6px;right:7px}.ra-intro__eyebrow{font-size:8px}}
+@media(prefers-reduced-motion:reduce){.ra-intro,.ra-curtain{display:none!important}body.ra-motion-locked{overflow:auto!important}}
+@media print{.ra-intro,.ra-curtain{display:none!important}}
+
+
+.ra-intro:not(.is-hidden) .ra-intro__welcome{animation:raTextReveal .65s .25s both}
+.ra-intro:not(.is-hidden) .ra-intro__title{animation:raTextReveal .7s .42s both}
+.ra-intro:not(.is-hidden) .ra-intro__line{animation:raTextReveal .6s .6s both}
+.ra-intro:not(.is-hidden) .ra-intro__message{animation:raTextReveal .7s .72s both}
+.ra-intro:not(.is-hidden) .ra-intro__credit{animation:raTextReveal .7s .9s both}
+@keyframes raTextReveal{from{opacity:0;transform:translateY(13px)}to{opacity:1;transform:translateY(0)}}

@@ -1,0 +1,1 @@
+window.RA_SUPABASE = { url: 'https://hfqxzbaemwjekmamotdq.supabase.co', publishableKey: 'sb_publishable_0-uwLZjGuaaunNvvcEP2JA_lZQ8Y2x5' };

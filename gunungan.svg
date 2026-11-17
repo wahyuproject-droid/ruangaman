@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 710" fill="none">
+<defs><linearGradient id="shell" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f2d69c"/><stop offset=".4" stop-color="#cba35d"/><stop offset="1" stop-color="#80522b"/></linearGradient><linearGradient id="inside" x1=".4" y1="0" x2=".7" y2="1"><stop stop-color="#643e28"/><stop offset="1" stop-color="#2a281c"/></linearGradient><pattern id="dots" width="21" height="21" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2.1" fill="#d6b67c" opacity=".53"/></pattern></defs>
+<!-- Original stylized gunungan/kayon illustration; not a copied museum artifact -->
+<path d="M270 22C230 108 151 157 98 244c-65 106-79 214-28 301 39 66 115 91 200 100 85-9 161-34 200-100 51-87 37-195-28-301C389 157 310 108 270 22Z" fill="url(#shell)" stroke="#f8dda1" stroke-width="10"/>
+<path d="M270 57c-40 90-123 136-170 230-44 88-50 165-12 238 31 58 94 81 182 89 88-8 151-31 182-89 38-73 32-150-12-238C393 193 310 147 270 57Z" fill="url(#inside)" stroke="#302417" stroke-width="8"/>
+<path d="M270 75c-31 84-90 130-143 223-33 61-38 138-14 198 29 70 83 82 157 92 74-10 128-22 157-92 24-60 19-137-14-198C360 205 301 159 270 75Z" fill="url(#dots)"/>
+<g stroke="#dbb773" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M270 134v285"/>
+<path d="M268 234c-71-17-99-60-85-103 49 24 77 48 85 103Zm3 27c76-17 105-70 88-117-54 28-80 62-88 117Z" fill="#b39459"/>
+<path d="M268 321c-79 0-129-54-125-102 67 11 108 52 125 102Zm4 16c79 0 127-53 126-105-70 14-108 56-126 105Z" fill="#a78854"/>
+<path d="M267 408c-80-9-137-55-144-111 85 13 120 55 144 111Zm6-5c81-8 138-58 147-110-85 14-124 64-147 110Z" fill="#957846"/>
+<path d="M270 203c-42-35-44-74 0-114 42 40 42 79 0 114Z" fill="#2e4c37"/>
+<path d="M270 169c-13-22-13-43 0-64 13 21 13 42 0 64Z" fill="#c7a76c"/>
+<path d="M131 420c31-39 54-35 81 2m196-2c-31-39-54-35-81 2"/>
+<path d="M105 478c30-44 61-38 84 2m246-2c-30-44-61-38-84 2"/>
+</g>
+<g stroke="#dbb773" stroke-width="4"><path d="M171 501h198l-16 84H187l-16-84Z" fill="#4b3f2a"/><path d="m154 504 116-92 116 92Z" fill="#8b4f30"/><path d="m176 507 94-71 94 71Z" fill="#b08b51"/><path d="M239 585v-58h62v58" fill="#292c22"/><path d="M192 527h29v32h-29zm127 0h29v32h-29Z" fill="#304638"/></g>
+<path d="M158 598Q270 646 382 598" stroke="#e6c78d" stroke-width="7" stroke-linecap="round"/>
+<path d="M265 627h10v65h-10z" fill="#b59154"/>
+<g fill="#e5c486"><circle cx="270" cy="57" r="9"/><circle cx="115" cy="339" r="7"/><circle cx="425" cy="339" r="7"/><circle cx="134" cy="450" r="5"/><circle cx="408" cy="449" r="5"/></g>
+</svg>
